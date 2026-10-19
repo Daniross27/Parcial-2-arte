@@ -1,0 +1,24 @@
+#define PIN_R 25
+#define PIN_G 26
+#define PIN_B 27
+void setup()
+{
+    pinMode(PIN_R, OUTPUT);
+    pinMode(PIN_G, OUTPUT);
+    pinMode(PIN_B, OUTPUT);
+}
+void escribirRGB(int r, int g, int b)
+{ 
+    analogWrite(PIN_R, r);
+    analogWrite(PIN_G, g);
+    analogWrite(PIN_B, b);
+}
+void loop()
+{
+    escribirRGB(255, 0, 0); // Rojo
+    delay(1000);
+    escribirRGB(0, 255, 0); // Verde
+    delay(1000);
+    escribirRGB(0, 0, 255); // Azul
+    delay(1000);
+}
