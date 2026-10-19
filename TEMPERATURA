@@ -1,0 +1,18 @@
+#define LM35_PIN 35
+void setup()                             
+    {                                                 
+        Serial.begin(115200);                         
+        pinMode(LM35_PIN, INPUT);                    
+    }                                                 
+    void loop()                                       
+    {                                                 
+        int lecturaADC = analogRead(LM35_PIN);       
+        float voltios = (lecturaADC * 3.3) / 4095.0; 
+        float temperatura = voltios * 100.0;         
+        Serial.print("Voltaje: ");                    
+        Serial.print(voltios);                        
+        Serial.print(" V | Temperatura: ");           
+        Serial.print(temperatura);                    
+        Serial.println(" °C");                        
+        delay(1000);                                  
+    }
